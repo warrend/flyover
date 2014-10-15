@@ -30,7 +30,7 @@
 }
 
 // Mixin to create buttons
-@mixin style-button($color, $textColor, $isInverted: false) {
+@mixin style-button($color, $textColor, $isInverted: true) {
 
   background: $color;
   color: $textColor;
