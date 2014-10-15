@@ -155,7 +155,6 @@ function get_data($var) {
 </head>
 
 <body>
-
     <header class="app-bar promote-layer bar-background">
         <div>
             <button class="menu">
@@ -180,48 +179,46 @@ function get_data($var) {
         </ul>
     </nav>
 
-
-<main>
-
-		<div="page-header">
-			<h3 class="page-header xxlarge text-divider">Say hello</h3>
-		</div>
+    <main class="container">
 
 
+        <h1 class="page-header text-divider">Say hello</h1>
 
-		<div class="container g--centered">
 
-	        <form action="<?php echo basename(__FILE__); ?>" method="post">
+        <div class="g--centered">
 
-	            <div class="group">
-	                <input type="text" name="name" id="name" value="<?php get_data("name"); ?>" required>
-	                <span class="highlight"></span>
-	                <span class="bar"></span>
-	                <label for="name">Name</label>
-	            </div>
+            <form>
 
-	            <div class="group">
-	                <input type="text" name="email" id="email" value="<?php get_data("email"); ?>"required>
-	                <span class="highlight"></span>
-	                <span class="bar"></span>
-	                <label for="email">Email</label>
-	            </div>
 
-	            <div class="group">
-	                <textarea name="message" id="message" required><?php get_data("message"); ?></textarea>
-	                <!-- <input type="text" required> -->
-	                <span class="highlight"></span>
-	                <span class="bar"></span>
-	                <label for="message">Message</label>
-	            </div>
+                <div class="group">
+                    <input type="text" id="field_name" name="sender_name" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label for="field_name">Name</label>
+                </div>
 
-	            <input type="submit" name="submit" id="submit" class="button--primary" <?php if (isset($disable) && $disable === true) echo ' disabled="disabled"'; ?>>
+                <div class="group">
+                    <input type="text" id="field_email" name="sender_email" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label for="field_email">Email</label>
+                </div>
 
-	        </form>
-	        
+                <div class="group">
+                    <textarea id="field_message" name="sender_message" required></textarea>
+                    <!-- <input type="text" required> -->
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label for="field_message">Message</label>
+                </div>
+
+                <input type="submit" name="send_message" class="button--primary" value="Send">
+
+            </form>
+
         </div>
 
-<?php
+ <?php
 if (!empty($error_msg)) {
 	echo '<p class="error">ERROR: '. implode("<br />", $error_msg) . "</p>";
 }
@@ -256,3 +253,9 @@ if ($result != NULL) {
 </body>
 
 </html>
+
+
+
+
+
+    
